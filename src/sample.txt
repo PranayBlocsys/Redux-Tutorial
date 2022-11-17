@@ -1,0 +1,33 @@
+=======================================================================
+
+ //Action ==> Increment
+ const Increment = () => {
+   return {
+     type: "INCREMENT", 
+       };
+ };
+
+=======================================================================
+
+ // Reducers ==> Check which action is performing and modify and update the store
+ const counter = (state = 0 ,action) => {
+   switch (action. type) {
+     case "INCREMENT":
+       return state + 1;
+    case "DECREMENT":
+       return state - 1;
+     default:
+       return state;
+   }
+ };
+
+===========================================================================
+
+ // Store ==>Globalizes state
+ let Store = createStore(counter);
+ Store.subscribe(()=>{console.log(Store.getState())})
+
+=====================================================================
+
+// //Dispatch ==> Execute action
+ Store.dispatch(Increment())
